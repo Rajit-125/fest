@@ -8,14 +8,20 @@ function Pizza(){
     }
     return(
         <>
-        <div>
-            <h1 className=" mx-96 my-10 flex items-center text-9xl">PIZZA😜😜</h1>
-            <p className=" mx-72 my-10 flex items-center text-3xl">Margherita-----------------medium-------------------------239</p>
-            <button onClick={addHandler}>ADD</button>
-            <p className=" mx-72 my-10 flex items-center text-3xl">Veggie Paradise------------medium-------------------------459</p>
-            <p className=" mx-72 my-10 flex items-center text-3xl">Peppy Panner---------------medium-------------------------459</p>
+        <div className=" flex flex-col flex-1 bg-cover bg-[url('./assets/pizza.jpg')]">
+            <h1 className=" mx-96 flex items-center text-9xl text-cyan-50">PIZZA😜😜</h1>
+            <PizzaItem  name="margherita" size="regular" price="$245"></PizzaItem>
+            <PizzaItem  name="veggie paradise" size="medium" price="$469"></PizzaItem>
+            <PizzaItem  name="peppy panner" size="medium" price="$459"></PizzaItem>
+            <PizzaItem  name="veg extravaganza" size="medium" price="$549"></PizzaItem>
         </div>
         </>
+    )
+}
+
+function PizzaItem({name,size,price}){
+    return(
+        <p className=" mx-72 my-10 flex items-center text-3xl text-cyan-50 font-bold">{name},{size}-------{price}</p>
     )
 }
 export default Pizza
