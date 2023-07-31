@@ -4,16 +4,15 @@ function LoginPage() {
 
   return (
     <>
-    <div className=' w-full h-full flex items-center justify-center'>
+    <div className=" w-full h-[100vh] flex flex-col flex-1 items-center justify-center bg-[url('./assets/rest.jpg')] bg-cover">
     <div>
-      <h1 className=" text-6xl  ">wellcome❤️❤️</h1>
+      <h1 className=" my-10 flex text-6xl text-cyan-50">wellcome❤️❤️</h1>
     </div>
-    {/* <img src={Logo}/> */}
-    <div className=' flex items-center'>
+    <div className=" flex items-center ">
       <form id='login-form' method='POST'>
-      <label htmlFor="phone number">Plese enter a Phone Number</label> 
-      <input phone number="phone number" placeholder='Enter here...' type='text'/> 
-      <button type='submit'>LOGIN</button>
+     <div className=" flex items-center text-4xl text-red-500"> <label htmlFor="phone number">Plese enter a Phone Number</label> </div>
+     <div className=" my-5 flex items-center text-3xl"> <input phone number="phone number" placeholder='Enter here...' type='text'/> </div>
+     <div className=" mx-28 my-10 w-24 flex items-center text-3xl bg-violet-600 hover:text-red-400 px-1"> <button type='submit'>LOGIN</button></div>
       </form>
     </div>
     </div>
