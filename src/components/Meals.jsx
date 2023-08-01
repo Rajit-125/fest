@@ -1,18 +1,29 @@
+import { useContext } from "react";
+import CartContext from "../context/CartContext";
+
 function Meals(){
+  const cart= useContext(CartContext);
+  const addHandler=(name,price)=>{
+      cart.setCartData((cur)=>[...cur,{name,price}]);
+  }
+
     return(
         <>
         <div className=" flex flex-col flex-1 bg-cover bg-[url('./assets/meals.jpg')]">
           <h1 className=" mx-96 flex items-center text-9xl text-black">MEALS😊😊</h1>  
-          <MealsItem name="southindian" price="$80"></MealsItem>
-          <MealsItem name="northindian" price="$100"></MealsItem>
+          <MealsItem name="southindian" price="$80" button="ADD" onClick={addHandler}></MealsItem>
+          <MealsItem name="northindian" price="$100" button="ADD" onClick={addHandler}></MealsItem>
         </div>
         </>
     )
 }
 
-function MealsItem({name,price}){
+function MealsItem({name,price,button,onClick}){
   return(
+    <>
     <p className=" mx-72 my-10 flex items-center text-3xl text-black font-bold">{name}---------{price}</p>
+    <button className=" mx-72 flex items-center text-3xl text-black font-bold hover:bg-blue-500 w-24 hover:text-red-500 px-4" onClick={()=>onClick(name,price)}>{button}</button>
+    </>
   )
 }
 

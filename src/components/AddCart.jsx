@@ -8,9 +8,13 @@ function AddCart(){
         <div>
            {
             cart.cartData.length ?(
-                cart.cartData
+                cart.cartData.map(item=>{
+                    return(
+                        <p className=" mx-10 my-10 flex items-center text-2xl text-blue-400">{item.name}----{item.price}</p>
+                    )
+                })
             ):(
-                <h1 className="mx-10">First Order karo bhaiiiiiiiiiiiii</h1>
+                <h1 className=" mx-40 my-40 flex text-8xl">First Order karo bhaiiiiiiiiiiiii</h1>
             )
            }
         </div>
