@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage:{
         'JUICE': "url('/assets/JUICE.jpg')",
+        'PROFILE': "url('/assets/QR-CODE.jpg')",
       },
     },
   },
