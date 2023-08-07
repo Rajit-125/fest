@@ -18,10 +18,10 @@ function IceCream() {
   const cart = useContext(CartContext);
   const addHandler = (id, name, price) => {
     cart.setCartData((prev) => {
-      const itemIndex=prev.findIndex(item=> item.id===id)
+      const itemIndex=prev.findIndex(item=> item.id===id && item.name===name)
       if (itemIndex!==-1) {
        const updatedCart = prev.map(item =>
-        item.id===id ? {...item,count:item.count +1} : item 
+        item.id===id && item.name===name ? {...item,count:item.count +1} : item 
        )
        return updatedCart
       }
@@ -50,7 +50,7 @@ function IceCreamItem({ id, name, price, button, onClick }) {
   return (
     <>
       <p1 className=" mx-64 my-10 flex items-center text-3xl text-cyan-50 font-bold">{id}.{name}-----------${price}</p1>
-      <button className=" mx-72 flex items-center text-3xl text-cyan-50 font-bold hover:bg-blue-500 w-24 hover:text-red-500 px-4" onClick={() => onClick(id, name, price)}>{button}</button>
+      <button className=" mx-72 flex items-center text-3xl text-cyan-50 font-bold bg-blue-500 w-20 hover:text-red-500 py-2 px-2 rounded-xl" onClick={() => onClick(id, name, price)}>{button}</button>
     </>
   )
 }
