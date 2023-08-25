@@ -5,14 +5,17 @@ import {
 import './App.css'
 import { router } from './utils/Router';
 import { CartProvider } from './context/CartContext';
+import { useEffect } from 'react';
+import useTableRead from './hooks/database/use-table-read';
 
 function App() {
-
+  useTableRead({tableName:"foodtype"})
+  useEffect(()=>{},[])
   return (
     <>
-    <CartProvider>
-    <RouterProvider router={router}/>
-    </CartProvider>
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
     </>
   )
 }
