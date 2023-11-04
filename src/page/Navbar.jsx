@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-function Navbar() {
+function Navbar({onSearch}) {
   const [searchTerm,setSearchTerm]=useState()
   const handleInputChange=(e)=>{
    setSearchTerm(e.target.value)

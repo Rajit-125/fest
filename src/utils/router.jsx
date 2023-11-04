@@ -1,7 +1,7 @@
 import {
     createBrowserRouter,
 } from "react-router-dom";
-import Navbar from "../page/admin";
+import Navbar from "../page/Navbar";
 
 
 const router=createBrowserRouter(
