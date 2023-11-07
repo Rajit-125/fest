@@ -6,10 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage:{
-        'JUICE': "url('/assets/JUICE.jpg')",
-        'PROFILE': "url('/assets/QR-CODE.jpg')",
-      },
+      animation: {
+        'spin-slow': 'spin 16s linear infinite',
+      }
     },
   },
   plugins: [],
