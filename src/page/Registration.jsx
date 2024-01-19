@@ -1,22 +1,59 @@
+
 import { useState } from "react";
 
-
+// import axios from 'axios/axios.js';
 function Registration() {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [usn, setUsn] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
-    const [event,setEvent]=useState("")
-    const [year,setYear]=useState("")
-    const [branch,setBranch]=useState("")
+    const [event, setEvent] = useState("")
+    const [year, setYear] = useState("")
+    const [branch, setBranch] = useState("")
+    const [dob, setDob] = useState("")
+    const [gen, setGen] = useState("")
+    const [college, setCollege] = useState("")
 
     const handleOneSubmit = async (e) => {
+        e.preventDefault();
+
+        const formData = {
+            name,
+            email,
+            usn,
+            phoneNumber,
+            event,
+            year,
+            branch,
+            gen,
+            college,
+            dob,
+        };
+
+        try {
+            const response = await fetch("http://localhost:8080/student", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+            // const response = await axios.post("http://localhost:8080/student",formData)
+
+            if (response.ok) {
+                console.log("Registration successful!");
+            } else {
+                console.error("Registration failed!");
+            }
+        } catch (error) {
+            console.error("Error during registration:", error);
+        }
     }
 
     return (
         <>
             <div className=" bg-[url('./assets/signup.jpg')] bg-cover flex flex-col">
-                <div className=" my-20 mx-52 w-48 px-2 py-2 text-6xl font-bold text-white">
+                <div className=" my-10 mx-52 w-48 px-2 py-2 text-6xl font-bold text-white">
                     Registration Form
                 </div>
                 <form
@@ -42,37 +79,51 @@ function Registration() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
+                        <h3 className=" mx-5 my-1 text-2xl font-bold text-white">Gender</h3>
+                        <select id="mySelect" value={gen} onChange={(e) => setGen(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">
+                            <option value="">Select a Gender</option>
+                            <option >Male</option>
+                            <option >Female</option>
+                        </select>
+                        <h1 className=" mx-5 text-2xl font-bold text-white">College Name</h1>
+                        <input
+                            className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5"
+                            type="text"
+                            placeholder="enter college name..."
+                            value={college}
+                            onChange={(e) => setCollege(e.target.value)}
+                        />
                         <h2 className=" mx-5 my-1 text-2xl font-bold text-white">
                             event
                         </h2>
-                        <select id="mySelect" value={event} onChange={(e)=>setEvent(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">
+                        <select id="mySelect" value={event} onChange={(e) => setEvent(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">
                             <option value="">Select an event</option>
-                            <option value="section1">Hackthan</option>
-                            <option value="section2">Painting</option>
-                            <option value="section3">Quiz</option>
-                            <option value="section4">Classical Dance</option>
-                            <option value="section5">Fashion Show</option>
-                            <option value="section6">Singing</option>
+                            <option >Hackthan</option>
+                            <option >Painting</option>
+                            <option>Quiz</option>
+                            <option >Classical Dance</option>
+                            <option>Fashion Show</option>
+                            <option >Singing</option>
                         </select>
                         <h3 className=" mx-5 my-1 text-2xl font-bold text-white">Year</h3>
-                        <select id="mySelect" value={year} onChange={(e)=>setYear(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">
+                        <select id="mySelect" value={year} onChange={(e) => setYear(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">
                             <option value="">Select a year</option>
-                            <option value="section1">1</option>
-                            <option value="section2">2</option>
-                            <option value="section3">3</option>
-                            <option value="section4">4</option>
+                            <option >1</option>
+                            <option >2</option>
+                            <option >3</option>
+                            <option >4</option>
                         </select>
                         <h3 className=" mx-5 my-1 text-2xl font-bold text-white">Branch</h3>
-                        <select id="mySelect" value={branch} onChange={(e)=>setBranch(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">
+                        <select id="mySelect" value={branch} onChange={(e) => setBranch(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">
                             <option value="">Select a branch</option>
-                            <option value="section1">Arospace Engineering</option>
-                            <option value="section2">ISE</option>
-                            <option value="section3">CSE</option>
-                            <option value="section4">AIML</option>
-                            <option value="section5">Chemical Engineering</option>
-                            <option value="section6">ECE</option>
-                            <option value="section7">ET</option>
-                            <option value="section8">EEE</option>
+                            <option >Arospace Engineering</option>
+                            <option >ISE</option>
+                            <option >CSE</option>
+                            <option >AIML</option>
+                            <option >Chemical Engineering</option>
+                            <option >ECE</option>
+                            <option >ET</option>
+                            <option >EEE</option>
                         </select>
                         <h4 className=" mx-5 my-1 text-2xl font-bold text-white">Usn</h4>
                         <input
@@ -91,6 +142,19 @@ function Registration() {
                             value={phoneNumber}
                             onChange={(e) => setPhoneNumber(e.target.value)}
                             placeholder="enter number..."
+                        />
+                    </div>
+                    <div className=" mx-40">
+                        <label htmlFor="dob" className=" mx-5 my-1 text-2xl font-bold text-white">Date of Birth:</label>
+                    </div>
+                    <div className=" mx-40">
+                        <input
+                            className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5"
+                            type="date"
+                            id="dob"
+                            name="dob"
+                            value={dob}
+                            onChange={(e) => setDob(e.target.value)}
                         />
                     </div>
                     <div>
