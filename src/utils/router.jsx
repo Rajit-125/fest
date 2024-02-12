@@ -3,7 +3,7 @@ import {
 } from "react-router-dom";
 import Navbar from "../page/Navbar";
 import Registration from "../page/Registration";
-import Rstudents from "../page/Rstudents";
+import Information from "../page/Information";
 
 
 const router=createBrowserRouter(
@@ -17,8 +17,8 @@ const router=createBrowserRouter(
             element:<Registration/>
         },
         {
-            path:"/rstudents",
-            element:<Rstudents/>
+            path:"/info",
+            element:<Information/>
         },
     ],
 )

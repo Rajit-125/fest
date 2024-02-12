@@ -31,7 +31,7 @@ function Registration() {
         };
 
         try {
-            const response = await fetch("http://localhost:8080/student", {
+            const response = await fetch("http://localhost:8080/participant", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -98,7 +98,7 @@ function Registration() {
                         </h2>
                         <select id="mySelect" value={event} onChange={(e) => setEvent(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">
                             <option value="">Select an event</option>
-                            <option >Hackthan</option>
+                            <option >Hackthon</option>
                             <option >Painting</option>
                             <option>Quiz</option>
                             <option >Classical Dance</option>
