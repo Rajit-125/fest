@@ -13,24 +13,35 @@ function Login() {
   const handleOneSubmit = async (e) => {
     e.preventDefault()
     try{
-      const response = await fetch("http://localhost:8080/participant?email=${email}", {
+      const response = await fetch(`http://localhost:8080/participant?email=${email}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                 },
             });
-            if(response.ok){
-              if( password==="rajit"){
-              console.log("login successfull!")
-              Navigate('/info')
+            if (response.ok) {
+              const userDataArray = await response.json();
+              if (userDataArray.length > 0) {
+                const userWithEnteredEmail = userDataArray.find((user) => user.email === email);
+          
+                if (userWithEnteredEmail) {
+                  if (password === "rajit") {
+                    console.log("Login successful!");
+                    Navigate('/info');
+                  } else {
+                    console.error('Incorrect password');
+                  }
+                } else {
+                  console.error('Entered email does not match any in the database');
+                }
+              } else {
+                console.error('User not found in the database');
+              }
+            } else {
+              console.error('Error in login:', response.status);
             }
-            else{
-              console.error('error in the login')
-            }}else {
-              console.error('User not found or error in login',error)
-            }
-          }catch(error){
-              console.error('error during login',error)
+          } catch (error) {
+            console.error('Error during login', error);
           }
  }
 
