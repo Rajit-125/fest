@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import {useNavigate} from 'react-router-dom'
 
 // import axios from 'axios/axios.js';
 function Registration() {
@@ -13,6 +14,7 @@ function Registration() {
     const [dob, setDob] = useState("")
     const [gen, setGen] = useState("")
     const [college, setCollege] = useState("")
+    let Navigate=useNavigate()
 
     const handleOneSubmit = async (e) => {
         e.preventDefault();
@@ -41,11 +43,16 @@ function Registration() {
             // const response = await axios.post("http://localhost:8080/student",formData)
 
             if (response.ok) {
+                Navigate('/')
+                // alert('registration successfull')
                 console.log("Registration successful!");
             } else {
+                // alert('error occuring')
                 console.error("Registration failed!");
             }
         } catch (error) {
+            Navigate('/')
+            // alert('error in registration')
             console.error("Error during registration:", error);
         }
     }
@@ -98,12 +105,11 @@ function Registration() {
                         </h2>
                         <select id="mySelect" value={event} onChange={(e) => setEvent(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">
                             <option value="">Select an event</option>
-                            <option >Hackthon</option>
-                            <option >Painting</option>
-                            <option>Quiz</option>
-                            <option >Classical Dance</option>
-                            <option>Fashion Show</option>
-                            <option >Singing</option>
+                            <option >Dance Competition</option>
+                            <option >Music Concert</option>
+                            <option>Comedy Show</option>
+                            <option >Film Screening</option>
+                            <option>Art Exhibition</option>
                         </select>
                         <h3 className=" mx-5 my-1 text-2xl font-bold text-white">Year</h3>
                         <select id="mySelect" value={year} onChange={(e) => setYear(e.target.value)} className=" mx-3 my-1 w-80 text-xl rounded-xl font-bold px-5">

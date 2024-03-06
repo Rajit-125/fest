@@ -27,20 +27,26 @@ function Login() {
                 if (userWithEnteredEmail) {
                   if (password === "rajit") {
                     console.log("Login successful!");
+                    alert('login successfull')
                     Navigate('/info');
                   } else {
+                    alert('enter correct password')
                     console.error('Incorrect password');
                   }
                 } else {
+                  alert('email not found')
                   console.error('Entered email does not match any in the database');
                 }
               } else {
+                alert('user not found')
                 console.error('User not found in the database');
               }
             } else {
+              alert('error occuring in login')
               console.error('Error in login:', response.status);
             }
           } catch (error) {
+            alert('errorrrrrrrrr')
             console.error('Error during login', error);
           }
  }
