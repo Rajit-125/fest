@@ -4,6 +4,7 @@ import {
 import Navbar from "../page/Navbar";
 import Registration from "../page/Registration";
 import Information from "../page/Information";
+import Feedback from "../page/Feedback";
 
 
 const router=createBrowserRouter(
@@ -19,6 +20,10 @@ const router=createBrowserRouter(
         {
             path:"/info",
             element:<Information/>
+        },
+        {
+            path:"/feedback",
+            element:<Feedback/>
         },
     ],
 )

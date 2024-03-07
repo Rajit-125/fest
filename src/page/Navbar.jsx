@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom"
 import {Link as ScrollLink} from 'react-scroll'
 import Login from "./Login"
+import Feedback from "./Feedback"
 function Navbar() {
   
   return (
@@ -72,11 +73,9 @@ function Navbar() {
           <img src="./assets/rvce.jpg" alt="rvce" className=" mx-10 my-10"/>
         </Link>
       </div>
-      {/* <div id="contact">
-        <h1 className=" mx-40 my-2 text-4xl text-black font-semibold">any question feel free to reach</h1>
-        <h1 className=" mx-40 my-4 text-2xl text-black font-semibold">Rakshith V--9483846545</h1>
-        <h1 className=" mx-40 my-4 text-2xl text-black font-semibold">Email-rakshithv.cs21@rvce.edu.in</h1>
-      </div> */}
+      <div>
+        <Feedback/>
+      </div>
     </>
   )
 }
