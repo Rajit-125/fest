@@ -23,6 +23,7 @@ function Navbar() {
             Registration
           </Link>
           <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className=" mx-2 hover:text-orange-500 hover:bg-green-300 px-2 rounded-2xl text-white font-bold">ContactUs</ScrollLink>
+          <ScrollLink to="feedback" spy={true} smooth={true} offset={-70} duration={500} className=" mx-2 hover:text-orange-500 hover:bg-green-300 px-2 rounded-2xl text-white font-bold">Feedback</ScrollLink>
         </div>
       </div>
       <div className=" grid grid-flow-col gap-4">
@@ -73,7 +74,7 @@ function Navbar() {
           <img src="./assets/rvce.jpg" alt="rvce" className=" mx-10 my-10"/>
         </Link>
       </div>
-      <div>
+      <div id="feedback">
         <Feedback/>
       </div>
     </>

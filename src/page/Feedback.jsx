@@ -24,7 +24,7 @@ function Feedback() {
     };
     return (
         <>
-            <div className=" mx-96 my-40 border-2 dark:ring-8 bg-slate-200 w-96 h-96 rounded-3xl py-4 px-4">
+            <div className=" mx-96 my-10 border-2 dark:ring-8 bg-slate-200 w-96 h-96 rounded-3xl py-4 px-4">
                 <h1 className=" mx-28 my-5 text-3xl text-black font-bold">Feedback Form</h1>
                 <label className=" my-5 text-2xl text-black font-semibold"> USN:</label>
                 <input
@@ -36,7 +36,7 @@ function Feedback() {
                 <br />
                 <label className=" my-5 text-2xl text-black font-semibold">Feedback:</label>
                 <textarea 
-                    className=" mx-3 w-52 text-xl rounded-xl font-bold px-5"
+                    className=" mx-3 w-52 text-1xl rounded-xl font-bold px-5"
                     value={feedbackData.feedbackText}
                     onChange={(e) => setFeedbackData({ ...feedbackData, feedbackText: e.target.value })}
                 ></textarea>
@@ -50,7 +50,7 @@ function Feedback() {
                     placeholder="give rating.."
                 />
                 <br />
-                <button onClick={submitFeedback} className=" mx-20 my-5 text-3xl text-black bg-red-300 rounded-2xl w-36 hover:text-blue-300" >Submit</button>
+                <button onClick={submitFeedback} className=" mx-20 my-20 text-3xl text-black bg-red-300 rounded-2xl w-36 hover:text-blue-300" >Submit</button>
             </div>
         </>
     )

@@ -53,14 +53,16 @@ function Information() {
     <div>
       <h1 className=" mx-96 my-20 text-3xl text-black font-bold">Informations</h1>
 
-      <table className=" mx-40 my-20 text-1xl text-black font-semibold table-fixed gap-x-4">
+      <table className=" mx-40 my-20 text-1xl text-black font-semibold table-fixed gap-x-4 bg-green-400 rounded-2xl h-64">
         <thead >
+          <tr>
           <th>EventName</th>
           <th>TeamSize</th>
           <th>EntryFee</th>
           <th>EventLocation</th>
           <th>CompanyName</th>
           <th>EventDate</th>
+          </tr>
         </thead>
          {eventsData.map((event) => (
             <tbody key={event.Ename}>
@@ -76,7 +78,7 @@ function Information() {
          ))}
       </table>
 
-      <table className=" mx-40 my-20 text-1xl text-black font-semibold table-fixed gap-x-4">
+      <table className=" mx-40 my-20 text-1xl text-black font-semibold table-fixed gap-x-4 bg-red-400 rounded-2xl h-72">
         <thead >
           <th>Usn</th>
           <th>Name</th>
@@ -107,7 +109,7 @@ function Information() {
          ))}
       </table>
 
-      <table className=" mx-40 my-20 text-1xl text-black font-semibold table-fixed gap-x-4">
+      <table className=" mx-40 my-20 text-1xl text-black font-semibold table-fixed gap-x-4 bg-emerald-500 rounded-2xl h-72 ">
         <thead >
           <th>CompanyName</th>
           <th>Funds</th>
@@ -122,7 +124,7 @@ function Information() {
          ))}
       </table>
 
-      <table className=" mx-40 my-20 text-1xl text-black font-semibold table-fixed gap-x-4">
+      <table className=" mx-40 my-20 text-1xl text-black font-semibold table-fixed gap-x-4 bg-blue-500 rounded-2xl h-72">
         <thead >
           <th>Id</th>
           <th>ContactNumber</th>
