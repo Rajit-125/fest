@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import {useNavigate} from 'react-router-dom'
+import Chat from "./Chatbox";
 
 // import axios from 'axios/axios.js';
 function Registration() {
@@ -59,7 +60,8 @@ function Registration() {
 
     return (
         <>
-            <div className=" bg-[url('./assets/signup.jpg')] bg-cover flex flex-col">
+            <div className=" bg-[url('./assets/signup.jpg')] bg-cover grid grid-cols-2 gap-4">
+            <div className=" flex flex-col">
                 <div className=" my-10 mx-52 w-48 px-2 py-2 text-6xl font-bold text-white">
                     Registration Form
                 </div>
@@ -172,6 +174,10 @@ function Registration() {
                         </button>
                     </div>
                 </form>
+                </div>
+                <div>
+                    <Chat/>
+                </div>
             </div>
         </>
     );
