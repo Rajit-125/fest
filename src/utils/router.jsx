@@ -6,7 +6,7 @@ import Registration from "../page/Registration";
 import Information from "../page/Information";
 import Feedback from "../page/Feedback";
 import Chat from "../page/Chatbox";
-import Chatbox from "../page/Chat";
+
 
 
 const router=createBrowserRouter(
@@ -30,10 +30,6 @@ const router=createBrowserRouter(
         {
             path:"/chat",
             element:<Chat/>
-        },
-        {
-            path:"/chatbox",
-            element:<Chatbox/>
         },
     ],
 )
