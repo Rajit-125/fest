@@ -2,6 +2,7 @@
 import { useState } from "react";
 import {useNavigate} from 'react-router-dom'
 import Chat from "./Chatbox";
+//import Chatbox from "./Chat";
 
 // import axios from 'axios/axios.js';
 function Registration() {
@@ -175,7 +176,7 @@ function Registration() {
                     </div>
                 </form>
                 </div>
-                <div>
+                <div className=" ">
                     <Chat/>
                 </div>
             </div>
